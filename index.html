@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -14,11 +14,7 @@
       --muted: #aab3c5;
       --accent: #7dd3fc;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
@@ -26,41 +22,21 @@
       color: var(--text);
       line-height: 1.6;
     }
-
     .wrap {
       width: min(1100px, calc(100% - 32px));
       margin: 0 auto;
       padding: 32px 0 48px;
     }
-
-    .intro {
-      margin-bottom: 28px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: 32px;
-      font-weight: 700;
-    }
-
-    .sub {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .list {
-      display: grid;
-      gap: 20px;
-    }
-
+    .intro { margin-bottom: 28px; }
+    h1 { margin: 0 0 8px; font-size: 32px; font-weight: 700; }
+    .sub { margin: 0; color: var(--muted); font-size: 15px; }
+    .list { display: grid; gap: 20px; }
     .item {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
     }
-
     .meta {
       padding: 14px 16px 12px;
       border-bottom: 1px solid var(--line);
@@ -70,45 +46,19 @@
       align-items: baseline;
       flex-wrap: wrap;
     }
-
-    .title {
-      margin: 0;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .tag {
-      color: var(--accent);
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
+    .title { margin: 0; font-size: 18px; font-weight: 600; }
+    .tag { color: var(--accent); font-size: 13px; white-space: nowrap; }
     video {
       display: block;
       width: 100%;
       max-height: 78vh;
       background: #000;
     }
-
-    .footer {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
+    .footer { margin-top: 20px; color: var(--muted); font-size: 13px; }
     @media (max-width: 640px) {
-      .wrap {
-        width: min(100% - 20px, 1100px);
-        padding-top: 20px;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-
-      .title {
-        font-size: 16px;
-      }
+      .wrap { width: min(100% - 20px, 1100px); padding-top: 20px; }
+      h1 { font-size: 26px; }
+      .title { font-size: 16px; }
     }
   </style>
 </head>
@@ -121,47 +71,32 @@
 
     <section class="list">
       <article class="item">
-        <div class="meta">
-          <h2 class="title">视频 1</h2>
-          <span class="tag">MP4</span>
-        </div>
+        <div class="meta"><h2 class="title">视频 1</h2><span class="tag">MP4</span></div>
         <video controls playsinline preload="metadata">
           <source src="videos/video-1.mp4" type="video/mp4">
         </video>
       </article>
-
       <article class="item">
-        <div class="meta">
-          <h2 class="title">视频 2</h2>
-          <span class="tag">MP4</span>
-        </div>
+        <div class="meta"><h2 class="title">视频 2</h2><span class="tag">MP4</span></div>
         <video controls playsinline preload="metadata">
           <source src="videos/video-2.mp4" type="video/mp4">
         </video>
       </article>
-
       <article class="item">
-        <div class="meta">
-          <h2 class="title">视频 3</h2>
-          <span class="tag">MP4</span>
-        </div>
+        <div class="meta"><h2 class="title">视频 3</h2><span class="tag">MP4</span></div>
         <video controls playsinline preload="metadata">
           <source src="videos/video-3.mp4" type="video/mp4">
         </video>
       </article>
-
       <article class="item">
-        <div class="meta">
-          <h2 class="title">视频 4</h2>
-          <span class="tag">MP4</span>
-        </div>
+        <div class="meta"><h2 class="title">视频 4</h2><span class="tag">MP4 · 外部链接</span></div>
         <video controls playsinline preload="metadata">
-          <source src="videos/video-4.mp4" type="video/mp4">
+          <source src="https://github.com/wx1231313/video-share-site/releases/download/untagged-fea230ff5c028c68c189/video-4.mp4" type="video/mp4">
         </video>
       </article>
     </section>
 
-    <p class="footer">这个页面已经适合直接发布成静态网站。</p>
+    <p class="footer">通过 GitHub Pages 分享 · 点击播放按钮即可观看</p>
   </main>
 </body>
 </html>
