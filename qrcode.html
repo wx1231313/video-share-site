@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扫码查看作品集</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0f1115; --panel: #171a21; --text: #f5f7fb; --muted: #aab3c5; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid #2b313d;
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+    }
+    h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+    .sub { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    #qrcode img {
+      width: 240px;
+      height: 240px;
+      border-radius: 12px;
+      background: white;
+      padding: 12px;
+    }
+    .url-text {
+      color: var(--muted);
+      font-size: 13px;
+      word-break: break-all;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #7dd3fc;
+      color: #0f1115;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .tip { color: var(--muted); font-size: 12px; margin-top: 16px; }
+    @media (max-width: 480px) {
+      .card { padding: 28px 20px; }
+      #qrcode img { width: 200px; height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>作品集</h1>
+    <p class="sub">扫码或点击按钮查看作品</p>
+
+    <div id="qrcode"></div>
+
+    <div class="url-text" id="urlDisplay"></div>
+
+    <a class="btn" id="openBtn" href="#" target="_blank">打开作品集</a>
+
+    <div class="tip">推荐使用手机默认浏览器打开</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script>
+    var targetUrl = "https://wx1231313.github.io/video-share-site/";
+    document.getElementById("urlDisplay").textContent = targetUrl;
+    document.getElementById("openBtn").href = targetUrl;
+
+    // 生成二维码
+    new QRCode(document.getElementById("qrcode"), {
+      text: targetUrl,
+      width: 240,
+      height: 240,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
