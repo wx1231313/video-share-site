@@ -5,15 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>作品集</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0f1115;
-      --panel: #171a21;
-      --line: #2b313d;
-      --text: #f5f7fb;
-      --muted: #aab3c5;
-      --accent: #7dd3fc;
-    }
+    :root { color-scheme: dark; --bg: #0f1115; --panel: #171a21; --line: #2b313d; --text: #f5f7fb; --muted: #aab3c5; --accent: #7dd3fc; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
@@ -25,78 +17,30 @@
     .wrap { max-width: 1100px; margin: 0 auto; }
     h1 { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
     .sub { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
-
-    .section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
+    .section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.2s;
+      display: flex; justify-content: space-between; align-items: center; padding: 16px 20px;
+      cursor: pointer; user-select: none; transition: background 0.2s;
     }
     .section-header:hover { background: rgba(255,255,255,0.03); }
     .section-header h2 { font-size: 20px; font-weight: 600; }
     .section-header .count { color: var(--muted); font-size: 14px; }
-    .section-header .arrow {
-      font-size: 14px;
-      color: var(--muted);
-      transition: transform 0.3s ease;
-    }
+    .section-header .arrow { font-size: 14px; color: var(--muted); transition: transform 0.3s ease; }
     .section-header .arrow.open { transform: rotate(180deg); }
-    .section-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-    .section-body.open { max-height: 10000px; }
-
+    .section-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .section-body.open { max-height: none; }
     .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-      padding: 0 20px 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px; padding: 0 20px 20px;
     }
-    .image-grid img {
-      width: 100%;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.2s, opacity 0.2s;
-      display: block;
-    }
+    .image-grid img { width: 100%; border-radius: 6px; cursor: pointer; transition: transform 0.2s; display: block; }
     .image-grid img:hover { transform: scale(1.02); opacity: 0.9; }
-
     .video-list { padding: 0 20px 20px; }
     .video-item { margin-bottom: 16px; }
     .video-item:last-child { margin-bottom: 0; }
-    .video-title {
-      padding: 10px 0 8px;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--accent);
-    }
-    video {
-      display: block;
-      width: 100%;
-      max-height: 72vh;
-      background: #000;
-      border-radius: 6px;
-    }
-
-    .footer {
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-    }
-
+    .video-title { padding: 10px 0 8px; font-size: 15px; font-weight: 500; color: var(--accent); }
+    video { display: block; width: 100%; max-height: 72vh; background: #000; border-radius: 6px; }
+    .footer { margin-top: 24px; color: var(--muted); font-size: 13px; text-align: center; }
     @media (max-width: 640px) {
       body { padding: 20px 12px 32px; }
       h1 { font-size: 26px; }
@@ -111,64 +55,58 @@
 
     <div class="section">
       <div class="section-header" onclick="toggleSection('images')">
-        <div>
-          <h2>图片合集</h2>
-          <span class="count">共 15 张</span>
-        </div>
+        <div><h2>图片合集</h2><span class="count">共 15 张</span></div>
         <span class="arrow" id="arrow-images">&#9660;</span>
       </div>
       <div class="section-body" id="body-images">
         <div class="image-grid">
-          <img src="images/1.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/2.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/3.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/4.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/6.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/7.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/8.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/9.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/10.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/12.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/13.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/380d1ad0e5851f32b968b0b5020b3c6a.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/产品详情页.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/数据线详情页.jpg" loading="lazy" onclick="openImage(this.src)">
-          <img src="images/耳机详情页.jpg" loading="lazy" onclick="openImage(this.src)">
+          <img src="images/1.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/2.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/3.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/4.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/6.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/7.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/8.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/9.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/10.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/12.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/13.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/380d1ad0e5851f32b968b0b5020b3c6a.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/%E4%BA%A7%E5%93%81%E8%AF%A6%E6%83%85%E9%A1%B5.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/%E6%95%B0%E6%8D%AE%E7%BA%BF%E8%AF%A6%E6%83%85%E9%A1%B5.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
+          <img src="images/%E8%80%B3%E6%9C%BA%E8%AF%A6%E6%83%85%E9%A1%B5.jpg" loading="lazy" onclick="window.open(this.src,'_blank')">
         </div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-header" onclick="toggleSection('videos')">
-        <div>
-          <h2>视频合集</h2>
-          <span class="count">共 4 个</span>
-        </div>
+        <div><h2>视频合集</h2><span class="count">共 4 个</span></div>
         <span class="arrow" id="arrow-videos">&#9660;</span>
       </div>
       <div class="section-body" id="body-videos">
         <div class="video-list">
           <div class="video-item">
             <div class="video-title">视频 1</div>
-            <video controls playsinline preload="metadata">
+            <video controls playsinline preload="auto">
               <source src="videos/video-1.mp4" type="video/mp4">
             </video>
           </div>
           <div class="video-item">
             <div class="video-title">视频 2</div>
-            <video controls playsinline preload="metadata">
+            <video controls playsinline preload="auto">
               <source src="videos/video-2.mp4" type="video/mp4">
             </video>
           </div>
           <div class="video-item">
             <div class="video-title">视频 3</div>
-            <video controls playsinline preload="metadata">
+            <video controls playsinline preload="auto">
               <source src="videos/video-3.mp4" type="video/mp4">
             </video>
           </div>
           <div class="video-item">
             <div class="video-title">视频 4</div>
-            <video controls playsinline preload="metadata">
+            <video controls playsinline preload="auto">
               <source src="videos/video-4.mp4" type="video/mp4">
             </video>
           </div>
@@ -176,7 +114,7 @@
       </div>
     </div>
 
-    <div class="footer">点击图片可查看大图</div>
+    <div class="footer">全部内容通过 GitHub Pages 分享</div>
   </div>
 
   <script>
@@ -186,12 +124,6 @@
       body.classList.toggle("open");
       arrow.classList.toggle("open");
     }
-
-    function openImage(src) {
-      window.open(src, "_blank");
-    }
-
-    // Auto-open both sections on load
     window.addEventListener("DOMContentLoaded", function() {
       toggleSection("images");
       toggleSection("videos");
