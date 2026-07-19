@@ -22,21 +22,12 @@
       color: var(--text);
       line-height: 1.6;
     }
-    .wrap {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 32px 0 48px;
-    }
+    .wrap { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 48px; }
     .intro { margin-bottom: 28px; }
     h1 { margin: 0 0 8px; font-size: 32px; font-weight: 700; }
     .sub { margin: 0; color: var(--muted); font-size: 15px; }
     .list { display: grid; gap: 20px; }
-    .item {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-    }
+    .item { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
     .meta {
       padding: 14px 16px 12px;
       border-bottom: 1px solid var(--line);
@@ -48,12 +39,7 @@
     }
     .title { margin: 0; font-size: 18px; font-weight: 600; }
     .tag { color: var(--accent); font-size: 13px; white-space: nowrap; }
-    video {
-      display: block;
-      width: 100%;
-      max-height: 78vh;
-      background: #000;
-    }
+    video { display: block; width: 100%; max-height: 78vh; background: #000; }
     .footer { margin-top: 20px; color: var(--muted); font-size: 13px; }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 20px, 1100px); padding-top: 20px; }
@@ -66,37 +52,41 @@
   <main class="wrap">
     <section class="intro">
       <h1>视频合集</h1>
-      <p class="sub">打开页面后，直接点每个视频上的播放按钮就能观看。</p>
+      <p class="sub">打开页面后，点击每个视频上的播放按钮观看。</p>
     </section>
 
     <section class="list">
       <article class="item">
         <div class="meta"><h2 class="title">视频 1</h2><span class="tag">MP4</span></div>
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="auto">
           <source src="videos/video-1.mp4" type="video/mp4">
+          您的浏览器不支持视频播放。
         </video>
       </article>
       <article class="item">
         <div class="meta"><h2 class="title">视频 2</h2><span class="tag">MP4</span></div>
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="auto">
           <source src="videos/video-2.mp4" type="video/mp4">
+          您的浏览器不支持视频播放。
         </video>
       </article>
       <article class="item">
         <div class="meta"><h2 class="title">视频 3</h2><span class="tag">MP4</span></div>
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="auto">
           <source src="videos/video-3.mp4" type="video/mp4">
+          您的浏览器不支持视频播放。
         </video>
       </article>
       <article class="item">
-        <div class="meta"><h2 class="title">视频 4</h2><span class="tag">MP4 · 外部链接</span></div>
+        <div class="meta"><h2 class="title">视频 4</h2><span class="tag">MP4 · 较大文件</span></div>
         <video controls playsinline preload="metadata">
-          <source src="https://github.com/wx1231313/video-share-site/releases/download/untagged-fea230ff5c028c68c189/video-4.mp4" type="video/mp4">
+          <source src="https://github.com/wx1231313/video-share-site/releases/download/v1.0/video-4.mp4" type="video/mp4">
+          您的浏览器不支持视频播放。
         </video>
       </article>
     </section>
 
-    <p class="footer">通过 GitHub Pages 分享 · 点击播放按钮即可观看</p>
+    <p class="footer">通过 GitHub Pages 分享 · 共 4 个视频</p>
   </main>
 </body>
 </html>
